@@ -1,0 +1,6 @@
+.idea/
+*.iml
+*.class
+ human-evaluation-rest-api/target/
+mongodb-data-layer/target/
+relational-data-layer/target/
