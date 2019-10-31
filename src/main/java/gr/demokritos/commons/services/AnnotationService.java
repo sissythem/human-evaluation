@@ -11,8 +11,8 @@ public interface AnnotationService {
     AnnotationDto saveAnnotation(AnnotationDto annotationDto);
     AnnotationDto updateAnnotation(AnnotationDto annotationDto);
     void deleteAnnotation(AnnotationDto annotationDto);
-    AnnotationDto getAnnotationById(Long id);
+    AnnotationDto getAnnotationById(Object id);
     List<AnnotationDto> getAllAnnotations();
     List<AnnotationDto> getAllAnnotationsByUserEmail(String email);
-    List<AnnotationDto> getAllAnnotationsByTextId(Long textId);
+    List<AnnotationDto> getAllAnnotationsByTextId(Object textId);
 }

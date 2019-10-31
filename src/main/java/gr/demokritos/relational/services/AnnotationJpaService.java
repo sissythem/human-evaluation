@@ -29,32 +29,39 @@ public class AnnotationJpaService implements AnnotationService {
     private AnnotationJpaRepository repo;
 
     /** Annotations **/
+    @Override
     public AnnotationDto saveAnnotation(AnnotationDto annotationDto) {
         return mapperService.getDto(repo.save(mapperService.getEntity(annotationDto, Annotation.class)), AnnotationDto.class);
     }
 
+    @Override
     public AnnotationDto updateAnnotation(AnnotationDto annotationDto) {
         return mapperService.getDto(repo.save(mapperService.getEntity(annotationDto, Annotation.class)), AnnotationDto.class);
     }
 
+    @Override
     public void deleteAnnotation(AnnotationDto annotationDto) {
         repo.delete(mapperService.getEntity(annotationDto, Annotation.class));
     }
 
-    public AnnotationDto getAnnotationById(Long id) {
-        return mapperService.getDto(repo.findById(id), AnnotationDto.class);
+    @Override
+    public AnnotationDto getAnnotationById(Object id) {
+        return mapperService.getDto(repo.findById((Long)id), AnnotationDto.class);
     }
 
+    @Override
     public List<AnnotationDto> getAllAnnotations() {
         return mapperService.getDtos(repo.findAll(), AnnotationDto.class);
     }
 
+    @Override
     public List<AnnotationDto> getAllAnnotationsByUserEmail(String email) {
         return mapperService.getDtos(repo.findAllByUserEmail(email), AnnotationDto.class);
     }
 
-    public List<AnnotationDto> getAllAnnotationsByTextId(Long textId) {
-        return mapperService.getDtos(repo.findAllByTextId(textId), AnnotationDto.class);
+    @Override
+    public List<AnnotationDto> getAllAnnotationsByTextId(Object textId) {
+        return mapperService.getDtos(repo.findAllByTextId((Long)textId), AnnotationDto.class);
     }
 
     /** Grades **/

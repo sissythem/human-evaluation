@@ -34,8 +34,8 @@ public class CharacteristicJpaService implements CharacteristicService {
         repo.delete(mapperService.getEntity(characteristicDto, Characteristic.class));
     }
 
-    public CharacteristicDto getCharacteristicById(Long id) {
-        return mapperService.getDto(repo.findById(id), CharacteristicDto.class);
+    public CharacteristicDto getCharacteristicById(Object id) {
+        return mapperService.getDto(repo.findById((Long)id), CharacteristicDto.class);
     }
 
     public List<CharacteristicDto> getAllCharacteristics() {

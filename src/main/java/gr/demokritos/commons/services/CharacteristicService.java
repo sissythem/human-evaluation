@@ -11,7 +11,7 @@ public interface CharacteristicService {
     CharacteristicDto saveCharacteristic(CharacteristicDto characteristicDto);
     CharacteristicDto updateCharacteristic(CharacteristicDto characteristicDto);
     void deleteCharacteristic(CharacteristicDto characteristicDto);
-    CharacteristicDto getCharacteristicById(Long id);
+    CharacteristicDto getCharacteristicById(Object id);
     List<CharacteristicDto> getAllCharacteristics();
     CharacteristicDto getCharacteristicByName(String characteristicName);
 }

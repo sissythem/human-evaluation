@@ -1,5 +1,9 @@
 package gr.demokritos.config;
 
+import gr.demokritos.mongodb.services.AnnotationMongoService;
+import gr.demokritos.mongodb.services.CharacteristicMongoService;
+import gr.demokritos.mongodb.services.TextMongoService;
+import gr.demokritos.mongodb.services.UserMongoService;
 import gr.demokritos.relational.services.*;
 import gr.demokritos.utils.RestApiConstants;
 import gr.demokritos.commons.services.*;
@@ -18,7 +22,7 @@ public class RepositoryConfig {
         if(backendMethod.equalsIgnoreCase(RestApiConstants.RELATIONAL)) {
             return new UserJpaService();
         } else if (backendMethod.equalsIgnoreCase(RestApiConstants.MONGODB)) {
-
+            return new UserMongoService();
         }
         return null;
     }
@@ -28,7 +32,7 @@ public class RepositoryConfig {
         if(backendMethod.equalsIgnoreCase(RestApiConstants.RELATIONAL)) {
             return new TextJpaService();
         } else if (backendMethod.equalsIgnoreCase(RestApiConstants.MONGODB)) {
-
+            return new TextMongoService();
         }
         return null;
     }
@@ -38,7 +42,7 @@ public class RepositoryConfig {
         if(backendMethod.equalsIgnoreCase(RestApiConstants.RELATIONAL)) {
             return new AnnotationJpaService();
         } else if (backendMethod.equalsIgnoreCase(RestApiConstants.MONGODB)) {
-
+            return new AnnotationMongoService();
         }
         return null;
     }
@@ -48,7 +52,7 @@ public class RepositoryConfig {
         if(backendMethod.equalsIgnoreCase(RestApiConstants.RELATIONAL)) {
             return new CharacteristicJpaService();
         } else if (backendMethod.equalsIgnoreCase(RestApiConstants.MONGODB)) {
-
+            return new CharacteristicMongoService();
         }
         return null;
     }
