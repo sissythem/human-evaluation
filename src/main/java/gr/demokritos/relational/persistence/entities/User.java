@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="USERS")
+@Table(name = "USERS")
 @DynamicUpdate
 @DynamicInsert
 public class User extends AbstractEntity {

@@ -16,7 +16,6 @@ public class Grade extends AbstractEntity {
     private Characteristic characteristic;
     @Column(name = "RATING")
     private Integer rating;
-
     @ManyToOne
     @JoinColumn(name = "ANNOTATION_ID")
     private Annotation annotation;
