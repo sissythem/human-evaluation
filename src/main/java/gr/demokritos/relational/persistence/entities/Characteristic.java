@@ -5,7 +5,10 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "CHARACTERISTICS")
@@ -19,6 +22,9 @@ public class Characteristic extends AbstractEntity {
     private String description;
     @Column(name = "CHOICES")
     private String choices;
+
+    @OneToMany(mappedBy = "characteristic")
+    private List<Grade> grades = new ArrayList<>();
 
     public Characteristic() {
 
@@ -59,5 +65,24 @@ public class Characteristic extends AbstractEntity {
 
     public void setChoices(String choices) {
         this.choices = choices;
+    }
+
+    public List<Grade> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(List<Grade> grades) {
+        this.grades = grades;
+    }
+
+    @Override
+    public String toString() {
+        return "Characteristic{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", choices='" + choices + '\'' +
+                ", grades=" + grades +
+                ", id=" + id +
+                '}';
     }
 }

@@ -2,15 +2,17 @@ package gr.demokritos.relational.persistence.entities;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-public class AbstractEntity implements Serializable {
+public abstract class AbstractEntity implements Serializable {
 
     @Id
     @GenericGenerator(name = "native_generator", strategy = "native")
     @GeneratedValue(generator = "native_generator")
+    @Column(name = "ID")
     protected Long id;
 
     public Long getId() {
