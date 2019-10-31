@@ -1,5 +1,6 @@
 package gr.demokritos.relational.persistence.entities;
 
+import gr.demokritos.utils.RelationalConstants;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = RelationalConstants.USERS)
 @DynamicUpdate
 @DynamicInsert
 public class User extends AbstractEntity {

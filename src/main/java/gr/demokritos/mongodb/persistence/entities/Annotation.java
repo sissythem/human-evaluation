@@ -1,42 +1,44 @@
-package gr.demokritos.relational.persistence.entities;
+package gr.demokritos.mongodb.persistence.entities;
 
-import gr.demokritos.utils.RelationalConstants;
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
+import gr.demokritos.utils.MongoDbConstants;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
-import javax.persistence.*;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = RelationalConstants.ANNOTATIONS)
-@DynamicUpdate
-@DynamicInsert
+@Document(MongoDbConstants.ANNOTATIONS)
 public class Annotation extends AbstractEntity {
 
-    @ManyToOne
-    @JoinColumn(name = "USER_ID")
+    @DBRef
+    @Field("user")
     private User user;
-    @ManyToOne
-    @JoinColumn(name = "TEXT_ID")
+    @DBRef
+    @Field("text")
     private Text text;
-
-    @OneToMany(mappedBy = "annotation")
+    @ElementCollection
+    @Field("grades")
     private List<Grade> grades = new ArrayList<>();
 
     public Annotation() {
 
     }
 
-    public Annotation(User user, Text text) {
+    public Annotation(User user, Text text, List<Grade> grades) {
         this.user = user;
         this.text = text;
+        this.grades = grades;
     }
 
-    public Annotation(Long id, User user, Text text) {
+    public Annotation(String id, User user, Text text, List<Grade> grades) {
         this.id = id;
         this.user = user;
         this.text = text;
+        this.grades = grades;
     }
 
     public User getUser() {
@@ -61,14 +63,5 @@ public class Annotation extends AbstractEntity {
 
     public void setGrades(List<Grade> grades) {
         this.grades = grades;
-    }
-
-    @Override
-    public String toString() {
-        return "Annotation{" +
-                "user=" + user +
-                ", text=" + text +
-                ", id=" + id +
-                '}';
     }
 }

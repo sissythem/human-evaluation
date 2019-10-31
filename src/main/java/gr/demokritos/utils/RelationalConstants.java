@@ -7,6 +7,13 @@ public class RelationalConstants {
     public static final String POSTGRESQL = "POSTGRESQL";
     public static final String MY_SQL = "MYSQL";
 
+    /** Tables **/
+    public static final String USERS = "USERS";
+    public static final String TEXTS = "TEXTS";
+    public static final String CHARACTERISTICS = "CHARACTERISTICS";
+    public static final String ANNOTATIONS = "ANNOTATIONS";
+    public static final String GRADES = "GRADES";
+
     public static final String PERSISTENCE_PACKAGE = "gr.demokritos.relational.persistence";
     public static final String HIBERNATE_SQL_SERVER_DIALECT = "org.hibernate.dialect.SQLServer2008Dialect";
     public static final String HIBERNATE_ORACLE_DIALECT = "org.hibernate.dialect.Oracle10gDialect";

@@ -1,12 +1,13 @@
 package gr.demokritos.relational.persistence.entities;
 
+import gr.demokritos.utils.RelationalConstants;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "GRADES")
+@Table(name = RelationalConstants.GRADES)
 @DynamicUpdate
 @DynamicInsert
 public class Grade extends AbstractEntity {

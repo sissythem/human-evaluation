@@ -13,7 +13,6 @@ public class RestApiConstants {
     /** Services **/
     public static final String USER_SERVICE = "userService";
     public static final String TEXT_SERVICE = "textService";
-    public static final String GRADE_SERVICE = "gradeService";
     public static final String CHARACTERISTIC_SERVICE = "characteristicService";
     public static final String ANNOTATION_SERVICE = "annotationService";
 }

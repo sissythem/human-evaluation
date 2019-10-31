@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 public abstract class AbstractDto implements Serializable {
 
-    protected Long id;
+    protected Object id;
 
-    public Long getId() {
+    public Object getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Object id) {
         this.id = id;
     }
 

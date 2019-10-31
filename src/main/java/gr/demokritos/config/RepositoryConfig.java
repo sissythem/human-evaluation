@@ -33,16 +33,6 @@ public class RepositoryConfig {
         return null;
     }
 
-    @Bean(name = RestApiConstants.GRADE_SERVICE)
-    public GradeService gradeService() {
-        if(backendMethod.equalsIgnoreCase(RestApiConstants.RELATIONAL)) {
-            return new GradeJpaService();
-        } else if (backendMethod.equalsIgnoreCase(RestApiConstants.MONGODB)) {
-
-        }
-        return null;
-    }
-
     @Bean(name = RestApiConstants.ANNOTATION_SERVICE)
     public AnnotationService annotationService() {
         if(backendMethod.equalsIgnoreCase(RestApiConstants.RELATIONAL)) {
