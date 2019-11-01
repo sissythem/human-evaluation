@@ -2,13 +2,12 @@ package gr.demokritos.utils;
 
 public class RestApiConstants {
 
-    public static final String BASE_PACKAGE = "gr.demokritos";
-    public static final String APPLICATION_PROPERTIES_FILE = "application.properties";
-    public static final String CATALINA_BASE = "catalina.base";
-
     /** Backend Methods **/
     public static final String RELATIONAL = "RELATIONAL";
     public static final String MONGODB = "MONGODB";
+    public static final String CASSANDRA = "CASSANDRA";
+    public static final String REDIS = "REDIS";
+    public static final String JSON = "JSON";
 
     /** Services **/
     public static final String USER_SERVICE = "userService";
