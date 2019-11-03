@@ -1,6 +1,7 @@
 package gr.demokritos.config;
 
 import gr.demokritos.utils.CassandraConstants;
+import gr.demokritos.utils.RestApiConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,7 +28,7 @@ import java.util.List;
 @EnableCassandraRepositories(basePackages = CassandraConstants.PERSISTENCE_PACKAGE)
 @ConditionalOnProperty(
         name = "backend",
-        havingValue = "CASSANDRA")
+        havingValue = RestApiConstants.CASSANDRA)
 public class CassandraConfig extends AbstractCassandraConfiguration {
 
     private Logger logger = LoggerFactory.getLogger(CassandraConfig.class);
@@ -91,16 +92,6 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
     @Bean
     public CassandraConverter converter() {
         return new MappingCassandraConverter(mappingContext());
-    }
-
-    @Bean
-    public CassandraSessionFactoryBean session() {
-        CassandraSessionFactoryBean session = new CassandraSessionFactoryBean();
-        session.setCluster(cluster().getObject());
-        session.setKeyspaceName(keySpaceName);
-        session.setConverter(converter());
-        session.setSchemaAction(SchemaAction.NONE);
-        return session;
     }
 
     /*

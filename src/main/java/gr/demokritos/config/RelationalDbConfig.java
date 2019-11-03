@@ -1,6 +1,7 @@
 package gr.demokritos.config;
 
 import gr.demokritos.utils.RelationalConstants;
+import gr.demokritos.utils.RestApiConstants;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -29,7 +30,7 @@ import java.util.Map;
 @PropertySource("classpath:application.properties")
 @ConditionalOnProperty(
         name = "backend",
-        havingValue = "RELATIONAL")
+        havingValue = RestApiConstants.RELATIONAL)
 public class RelationalDbConfig {
 
     @Value("${application.database}")

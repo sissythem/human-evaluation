@@ -14,13 +14,6 @@ import java.util.List;
 @Service
 public class UserRedisService implements UserService {
 
-    @Autowired
-    @Qualifier(RelationalConstants.MAPPER_SERVICE)
-    private MapperService mapperService;
-
-    @Autowired
-    private UserRedisRepository repo;
-
     @Override
     public UserDto saveUser(UserDto userDto) {
         return null;

@@ -3,6 +3,7 @@ package gr.demokritos.config;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import gr.demokritos.utils.MongoDbConstants;
+import gr.demokritos.utils.RestApiConstants;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -19,9 +20,9 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 @EnableMongoRepositories(basePackages = MongoDbConstants.PERSISTENCE_PACKAGE)
 @PropertySource("classpath:application.properties")
-@ConditionalOnProperty(
-        name = "backend",
-        havingValue = "MONGODB")
+//@ConditionalOnProperty(
+//        name = "backend",
+//        havingValue = RestApiConstants.MONGODB)
 public class MongoConfig extends AbstractMongoClientConfiguration {
 
     @Value("${spring.data.mongodb.host}")
